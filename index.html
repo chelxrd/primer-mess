@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi loquita linda ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PANTALLA DE CARGA ============ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-heart">❤</div>
+    <p class="loader-text">Cargando algo especial para ti...</p>
+  </div>
+</div>
+
+<!-- ============ PARTÍCULAS / ESTRELLAS ============ -->
+<canvas id="particulas"></canvas>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+
+  <img src="extras/snoopy1.png" class="snoopy snoopy-hero-izq" alt="">
+  <img src="extras/snoopy2.png" class="snoopy snoopy-hero-der" alt="">
+
+  <div class="hero-contenido" id="heroContenido">
+    <div class="hero-fecha reveal-up">27 · 04 · 2026</div>
+    <h1 class="hero-titulo reveal-up delay-1">Para mi<br><em>loquita linda</em></h1>
+    <p class="hero-sub reveal-up delay-2">gracias por este primer mes juntos.</p>
+    <button class="hero-btn reveal-up delay-3" onclick="abrirMensaje()">
+      <span>Abre tu sorpresa</span>
+      <i>❤</i>
+    </button>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>Desliza hacia abajo</span>
+    <div class="hero-scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ============ MODAL MENSAJE ============ -->
+<div class="modal-overlay" id="modalOverlay" onclick="cerrarMensaje(event)">
+  <div class="modal-caja">
+    <button class="modal-cerrar" onclick="cerrarMensaje()">×</button>
+    <div class="modal-corazon">❤</div>
+    <p class="modal-texto">Te amo naye.</p>
+    <p class="modal-sub">Gracias por todo mi niña linda ❤️</p>
+  </div>
+</div>
+
+<!-- ============ CONTADOR ============ -->
+<section class="contador" id="contador">
+  <img src="extras/snoopy2.png" class="snoopy snoopy-contador" alt="">
+  <div class="contador-inner fade-section">
+    <p class="seccion-label">Nuestro tiempo juntos</p>
+    <div class="contador-grid">
+      <div class="contador-bloque">
+        <span class="contador-num" id="cDias">00</span>
+        <span class="contador-nombre">días</span>
+      </div>
+      <div class="contador-sep">:</div>
+      <div class="contador-bloque">
+        <span class="contador-num" id="cHoras">00</span>
+        <span class="contador-nombre">horas</span>
+      </div>
+      <div class="contador-sep">:</div>
+      <div class="contador-bloque">
+        <span class="contador-num" id="cMinutos">00</span>
+        <span class="contador-nombre">min</span>
+      </div>
+      <div class="contador-sep">:</div>
+      <div class="contador-bloque">
+        <span class="contador-num" id="cSegundos">00</span>
+        <span class="contador-nombre">seg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section class="galeria" id="galeria">
+  <div class="seccion-header fade-section">
+    <p class="seccion-label">Nuestros recuerdos</p>
+    <h2 class="seccion-titulo">Momentos que guardo<br>en el corazón</h2>
+  </div>
+
+  <div class="galeria-grid">
+    <div class="foto-wrap polaroid fade-photo"><img src="fotos/foto1.jpg" alt="Recuerdo 1" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid tall fade-photo"><img src="fotos/foto2.jpg" alt="Recuerdo 2" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid fade-photo"><img src="fotos/foto3.jpg" alt="Recuerdo 3" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid rotate-neg fade-photo"><img src="fotos/foto4.jpg" alt="Recuerdo 4" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid wide fade-photo"><img src="fotos/foto5.jpg" alt="Recuerdo 5" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid fade-photo"><img src="fotos/foto6.jpg" alt="Recuerdo 6" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid rotate-pos fade-photo"><img src="fotos/foto7.jpg" alt="Recuerdo 7" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid fade-photo"><img src="fotos/foto8.jpg" alt="Recuerdo 8" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid tall fade-photo"><img src="fotos/foto9.jpg" alt="Recuerdo 9" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid fade-photo"><img src="fotos/foto10.jpg" alt="Recuerdo 10" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid rotate-neg fade-photo"><img src="fotos/foto11.jpg" alt="Recuerdo 11" class="foto"><div class="polaroid-caption">❤</div></div>
+    <div class="foto-wrap polaroid wide fade-photo"><img src="fotos/foto12.jpg" alt="Recuerdo 12" class="foto"><div class="polaroid-caption">❤</div></div>
+  </div>
+</section>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" onclick="cerrarLightbox()">
+  <button class="lightbox-cerrar" onclick="cerrarLightbox()">×</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ============ VIDEO PELÍCULA ============ -->
+<section class="pelicula" id="pelicula">
+
+  <div class="seccion-header fade-section">
+    <p class="seccion-label">Nuestra historia</p>
+    <h2 class="seccion-titulo">Nuestra pequeña<br>película</h2>
+  </div>
+
+  <div class="pelicula-marco fade-section">
+
+    <div class="pelicula-tira pelicula-tira-top">
+      <div class="pelicula-perforaciones"></div>
+    </div>
+
+    <div class="pelicula-pantalla">
+      <video
+        id="videoPelicula"
+        controls
+        preload="metadata"
+        playsinline
+        poster="fotos/fondo.jpg"
+      >
+        <source src="https://res.cloudinary.com/ddwrx0nwd/video/upload/v1779678990/pelicula_no3not.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+
+      <div class="pelicula-overlay" id="peliculaOverlay">
+        <button class="pelicula-play-btn" id="peliculaPlayBtn">
+          <span class="play-circulo">▶</span>
+          <p class="play-texto">Reproducir nuestra pequeña historia</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="pelicula-tira pelicula-tira-bottom">
+      <div class="pelicula-perforaciones"></div>
+    </div>
+
+  </div>
+
+  <p class="pelicula-caption fade-section">Cada segundo contigo es mi escena favorita ❤</p>
+
+</section>
+
+<!-- ============ CARTA ============ -->
+<section class="carta" id="carta">
+  <img src="extras/snoopy3.png" class="snoopy snoopy-carta" alt="">
+
+  <div class="carta-inner fade-section">
+    <p class="seccion-label">Para Naye</p>
+    <h2 class="carta-titulo">Una carta desde<br>el corazón</h2>
+
+    <div class="carta-papel">
+      <div class="carta-lineas"></div>
+      <p class="carta-texto" id="cartaTexto"></p>
+      <span class="carta-cursor" id="cartaCursor">|</span>
+    </div>
+
+    <p class="carta-firma">Con todo mi amor ❤</p>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final" id="final">
+  <img src="extras/snoopy4.png" class="snoopy snoopy-final" alt="">
+  <div class="final-inner fade-section">
+    <div class="final-corazones" id="finalCorazones"></div>
+    <h2 class="final-titulo">Gracias por llegar<br>a mi vida</h2>
+    <p class="final-sub">Eres lo mejor que me ha pasado. ❤</p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
